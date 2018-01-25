@@ -23,6 +23,43 @@ a{
     background-image: none;
 }
 
+img-responsive {
+    margin-top: 2em;
+    margin-bottom: 5em;
+}
+
+img.anniversary {
+    border-radius: .75em;
+    background-color: blueviolet;
+}
+
+img.babyshower {
+    border-radius: .75em;
+    background-color: deepskyblue;
+}
+
+img.birthday {
+    border-radius: .75em;
+    background-color: greenyellow;
+}
+
+img.valentines {
+    border-radius: .75em;
+    background-color: black;
+    
+}
+
+.glyphicon-chevron-left {
+    color: black; 
+}
+
+.glyphicon-chevron-right {
+    color: black;
+}
+
+.carousel-control {
+    color: black;
+}
 .wrapper {
 }
 
