@@ -1,0 +1,86 @@
+﻿@page
+@model FormModel
+@{
+    ViewBag.meta_title = "Form";
+    ViewBag.meta_keywords = "";
+    ViewBag.meta_desc = "";
+    ViewBag.theme = "birthday";
+}
+
+<link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+<style>
+
+    .container {
+        padding-top: 1em;
+    }
+
+    input {
+        border: none;
+        background-color: transparent;
+    }
+
+    .fa-envelope {
+        padding: 15px;
+    }
+
+    .fa-user {
+        padding: 15px;
+    }
+
+    .input-group {
+        border: 1px solid blue;
+    }
+</style>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<div class="container p-t-50">
+    <form action="">
+        <div class="form-group">
+            <!--Name-->
+            <div class="input-group">
+                <span>
+                    <i class="fa fa-user prefix"></i>
+                </span>
+                <input type="text"
+                       class="form-control"
+                       placeholder="Please enter your friend's name">
+            </div>
+
+            <!--Email-->
+            <br>
+            <div class="input-group">
+                <span>
+                    <i class="fa fa-envelope prefix"></i>
+                </span>
+                <input type="text" class="form-control"
+                       placeholder="Friend's email"
+                       aria-describedby="basic-addon1">
+            </div>
+            <br>
+            <!--Subject+Message-->
+            <input name="Subject"
+                   type="text"
+                   placeholder="Subject"
+                   class="form-control"
+                   required>
+            <br>
+            <textarea class="form-control"
+                      rows="5"
+                      placeholder="Type your message here"
+                      id="comment"></textarea>
+            <br>
+            <div class="form-group">
+                <div class="g-recaptcha" data-sitekey="6Ldi_EYUAAAAAEJZ4MmhroqqX3pz-eVcJOI8US3Z"></div>
+            </div>
+
+            <!--Submit-->
+            <br>
+            <button type="submit"
+                    class="btn btn-primary">
+                Submit
+            </button>
+        </div>
+    </form>
+
+
+</div>
+

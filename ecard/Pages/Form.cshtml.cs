@@ -1,16 +1,24 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Configuration;
+using ecard.Model;
 
 namespace ecard.Pages
 {
     public class FormModel : PageModel
     {
+
+        //CONNECT TO MY DATABASE 
+
+        public Greetings bridgeGreetings { get; set; }
+
+        private myDB _myDB { get; set; }
+
+        public IConfiguration _Configuration { get; set; }
+
+
         public void OnGet()
         {
+
         }
     }
 }

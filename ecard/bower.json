@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "v4.0.0",
-    "font-awesome": "Font-Awesome#v4.7.0"
+    "font-awesome": "Font-Awesome#v4.7.0",
+    "textarea-autosize": "v0.4.2"
   }
 }

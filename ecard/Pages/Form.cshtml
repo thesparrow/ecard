@@ -1,73 +1,71 @@
 ﻿@page
-@model FormModel
+@model ecard.Model.Greetings
 @{
-
+    ViewBag.meta_title = "Form";
+    ViewBag.meta_keywords = "";
+    ViewBag.meta_desc = "";
+    ViewBag.theme = "birthday";
 }
 
-<link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-<style>
-    input {
-        border: none;
-        background-color: transparent;
-    }
-
-    .fa-envelope {
-        padding: 15px;
-    }
-
-    .fa-user {
-        padding: 15px;
-    }
-
-    .input-group {
-        border: 1px solid blue;
-    }
-</style>
 <div class="container">
-    <form action="">
+
+    <form action="Preview" method="post">
         <div class="form-group">
-            <!--Name-->
-            <div class="input-group">
-                <span>
-                    <i class="fa fa-user prefix"></i>
-                </span>
-                <input type="text"
-                       class="form-control"
-                       placeholder="Please enter your friend's name">
-            </div>
-
-            <!--Email-->
-            <br>
-            <div class="input-group">
-                <span>
-                    <i class="fa fa-envelope prefix"></i>
-                </span>
-                <input type="text" class="form-control"
-                       placeholder="Friend's email"
-                       aria-describedby="basic-addon1">
-            </div>
-            <br>
-            <!--Subject+Message-->
-            <input name="Subject"
-                   type="text"
-                   placeholder="Subject"
-                   class="form-control"
-                   required>
-            <br>
-            <textarea class="form-control"
-                      rows="5"
-                      placeholder="Type your message here"
-                      id="comment"></textarea>
-
-            <!--Submit-->
-            <br>
-            <button type="submit"
-                    class="btn btn-primary">
-                Submit
-            </button>
+            <label asp-for="@Model.FriendName"></label>
+            <input asp-for="@Model.FriendName" type="text" class="form-control" />
+            <span asp-validation-for="@Model.FriendName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.FriendEmail"></label>
+            <input asp-for="@Model.FriendEmail" type="email" class="form-control" />
+            <span asp-validation-for="@Model.FriendEmail" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Subject">Subject</label>
+            <input asp-for="@Model.Subject" type="text" class="form-control" />
+            <span asp-validation-for="@Model.Subject" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.Message"></label>
+            <textarea asp-for="@Model.Message" class="form-control"
+                      maxlength="140">
+            </textarea>
+            <span asp-validation-for="@Model.Message" class="text-danger"></span>
+            <div class="countdown"></div>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.SenderName"></label>
+            <input asp-for="@Model.SenderName" type="text" class="form-control" />
+            <span asp-validation-for="@Model.SenderName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.SenderEmail"></label>
+            <input asp-for="@Model.SenderEmail" type="email" class="form-control" />
+            <span asp-validation-for="@Model.SenderEmail" class="text-danger"></span>
         </div>
 
-
+        <div class="form-group">
+            <div class="g-recaptcha" data-sitekey="6Le-Jy0UAAAAAMyxngpkD12DzzXto51KmZNciDG2"></div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </div>
     </form>
+
 </div>
 
+@section scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+    <!-- BEGIN: TEXTAREA AUTOSIZE -->
+    <script src="~/lib/textarea-autosize/dist/jquery.textarea_autosize.js"></script>
+    <script>
+        $('textarea').textareaAutoSize();
+    </script>
+    <!-- END: TEXTAREA AUTOSIZE -->
+
+    <script src="~/lib/textarea-countdown.js"></script>
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+}
